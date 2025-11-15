@@ -17,12 +17,12 @@ The order module has not declared any allowed dependencies and can therefore acc
 Publishes OrderCompleted events
 
 ### payment
-The payment module has declared "order" as allowed dependencies and can therefore only access the code in the API packages in the order module(module root and named interfaces)
+The payment module has declared "order :: *" as allowed dependencies and can therefore only access the code in all the API packages in the order module(module root and named interfaces)
 
 This module reacts to OrderCompleted events and uses the OrderSPI to do some work.
 
 ### worker
-The worker module has not declared any allowed dependencies and can therefore access the code in all API packages(module root and named interfaces)
+The worker module has declared "order" as allowed dependencies and can therefore access the code in order module root API package.
 
 Scheduled to complete orders via OrderManagement
 

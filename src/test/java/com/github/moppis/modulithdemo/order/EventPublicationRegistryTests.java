@@ -27,15 +27,13 @@ public class EventPublicationRegistryTests {
     }
 
     @Test
-    void leavesPublicationIncompleteForFailingListener(Scenario scenario) throws Exception {
+    void leavesPublicationIncompleteForFailingListener(Scenario scenario) {
 
         var order = new Order();
 
         scenario.stimulate(() -> orders.complete(order))
                 .andWaitForStateChange(listener::getEx)
-                .andVerify(_ -> {
-                    assertThat(registry.findIncompletePublications()).hasSize(1);
-                });
+                .andVerify(_ -> assertThat(registry.findIncompletePublications()).hasSize(1));
     }
 
     static class FailingAsyncTransactionalEventListener {

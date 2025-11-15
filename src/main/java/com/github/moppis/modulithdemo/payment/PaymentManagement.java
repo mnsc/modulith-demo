@@ -18,7 +18,7 @@ public class PaymentManagement {
     }
 
     @ApplicationModuleListener
-    void on(OrderCompleted event) throws InterruptedException {
+    void on(OrderCompleted event) {
         var orderId = event.orderId();
 
         LOGGER.info("Received order completion for {}", orderId);

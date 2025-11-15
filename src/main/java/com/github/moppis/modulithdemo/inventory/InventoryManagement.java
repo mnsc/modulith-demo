@@ -14,7 +14,7 @@ public class InventoryManagement {
     }
 
     @ApplicationModuleListener
-    void on(OrderCompleted event) throws InterruptedException {
+    void on(OrderCompleted event) {
         var orderId = event.orderId();
 
         System.out.println("Received order completion for " + orderId);
