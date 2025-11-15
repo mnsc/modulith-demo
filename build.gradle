@@ -1,0 +1,55 @@
+plugins {
+    id "java"
+    id "idea"
+    id "org.springframework.boot" version "3.5.6"
+    id "io.spring.dependency-management" version "1.1.7"
+}
+
+group = "com.github.moppis"
+version = "0.0.1-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Jspecify
+    implementation("org.jspecify:jspecify:1.0.0")
+
+    // JMolecules
+    implementation platform('org.jmolecules:jmolecules-bom:2023.3.4')
+    implementation "org.jmolecules:jmolecules-ddd"
+
+    // Spring
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // Spring Modulith
+    implementation platform("org.springframework.modulith:spring-modulith-bom:1.4.3")
+    implementation("org.springframework.modulith:spring-modulith-core")
+    implementation("org.springframework.modulith:spring-modulith-starter-core")
+    implementation("org.springframework.modulith:spring-modulith-starter-jpa")
+    implementation("org.springframework.modulith:spring-modulith-events-core")
+
+    testImplementation("org.springframework.modulith:spring-modulith-starter-test")
+    testImplementation("org.springframework.modulith:spring-modulith-junit")
+
+    // H2
+    runtimeOnly("com.h2database:h2")
+
+    // Junit
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("org.assertj:assertj-core:3.27.6")
+}
+
+test {
+    useJUnitPlatform()
+}
