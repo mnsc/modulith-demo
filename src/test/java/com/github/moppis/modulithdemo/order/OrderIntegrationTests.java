@@ -1,6 +1,6 @@
 package com.github.moppis.modulithdemo.order;
 
-import com.github.moppis.modulithdemo.order.internal.events.OrderCompleted;
+import com.github.moppis.modulithdemo.order.api.events.OrderCompleted;
 import org.junit.jupiter.api.Test;
 import org.springframework.modulith.test.ApplicationModuleTest;
 import org.springframework.modulith.test.Scenario;
@@ -18,7 +18,9 @@ public class OrderIntegrationTests {
     void publishesOrderCompletion(Scenario scenario) {
         var reference = new Order();
 
-        scenario.stimulate(() -> orders.complete(reference))
+        scenario.stimulate(
+                        () -> orders.complete(reference)
+                )
                 .andWaitForEventOfType(OrderCompleted.class)
                 .matchingMappedValue(OrderCompleted::orderId, reference.getId())
                 .toArrive();

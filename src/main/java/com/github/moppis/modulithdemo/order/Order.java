@@ -1,5 +1,6 @@
 package com.github.moppis.modulithdemo.order;
 
+import com.github.moppis.modulithdemo.order.api.events.OrderIdentifier;
 import org.jmolecules.ddd.types.AggregateRoot;
 
 import java.util.UUID;

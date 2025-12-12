@@ -1,7 +1,7 @@
 package com.github.moppis.modulithdemo.order;
 
+import com.github.moppis.modulithdemo.order.api.events.OrderCompleted;
 import com.github.moppis.modulithdemo.order.internal.OrderInternal;
-import com.github.moppis.modulithdemo.order.internal.events.OrderCompleted;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

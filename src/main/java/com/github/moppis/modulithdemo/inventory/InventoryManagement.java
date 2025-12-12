@@ -1,6 +1,6 @@
 package com.github.moppis.modulithdemo.inventory;
 
-import com.github.moppis.modulithdemo.order.internal.events.OrderCompleted;
+import com.github.moppis.modulithdemo.order.api.events.OrderCompleted;
 import org.jmolecules.ddd.annotation.Service;
 import org.springframework.modulith.events.ApplicationModuleListener;
 

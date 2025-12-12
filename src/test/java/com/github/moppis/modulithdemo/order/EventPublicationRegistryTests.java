@@ -1,6 +1,6 @@
 package com.github.moppis.modulithdemo.order;
 
-import com.github.moppis.modulithdemo.order.internal.events.OrderCompleted;
+import com.github.moppis.modulithdemo.order.api.events.OrderCompleted;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Import;
 import org.springframework.modulith.events.ApplicationModuleListener;
