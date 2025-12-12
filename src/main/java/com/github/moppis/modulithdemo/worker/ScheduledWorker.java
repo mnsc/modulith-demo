@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.TimeUnit;
+
 @Component
 public class ScheduledWorker {
     private static final Logger LOGGER = LoggerFactory.getLogger(ScheduledWorker.class);
@@ -17,7 +19,7 @@ public class ScheduledWorker {
         this.orderManagement = orderManagement;
     }
 
-    @Scheduled(cron = "*/30 * * * * *")
+    @Scheduled(initialDelay = 1, fixedRate = 30, timeUnit = TimeUnit.SECONDS)
     public void completeOrder() {
         var order = new Order();
         LOGGER.info("Completing order: {}", order.getId());
