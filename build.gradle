@@ -23,7 +23,7 @@ dependencies {
     implementation("org.jspecify:jspecify:1.0.0")
 
     // JMolecules
-    implementation platform('org.jmolecules:jmolecules-bom:2023.3.4')
+    implementation platform('org.jmolecules:jmolecules-bom:2025.0.0')
     implementation "org.jmolecules:jmolecules-ddd"
 
     // Spring
