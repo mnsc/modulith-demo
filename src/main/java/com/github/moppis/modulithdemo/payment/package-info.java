@@ -1,5 +1,5 @@
 @ApplicationModule(
-        allowedDependencies = "order :: *"
+        allowedDependencies = "order :: events"
 )
 @NullMarked
 package com.github.moppis.modulithdemo.payment;
